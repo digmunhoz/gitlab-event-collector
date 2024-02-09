@@ -1,0 +1,62 @@
+version: "3"
+services:
+  collector:
+   build:
+     context: .
+     dockerfile: Dockerfile
+   container_name: collector
+   env_file:
+     - ./env
+   volumes:
+     - ./src:/app
+   depends_on:
+     elasticsearch:
+       condition: service_healthy
+   command: ["python", "manager.py", "gitlab-api", "--api", "gitlab_events"]
+
+  elasticsearch:
+    image: elasticsearch:7.10.1
+    container_name: elasticsearch
+    platform: linux/x86_64
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - node.name=elasticsearch
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    volumes:
+      - ./data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: curl -s http://elasticsearch:9200/_cat/health >/dev/null || exit 1
+      interval: 10s
+      timeout: 10s
+      retries: 30
+
+  kibana:
+    image: kibana:7.10.1
+    container_name: kibana
+    platform: linux/x86_64
+    ports:
+      - 5601:5601
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - XPACK_SECURITY_ENABLED=false
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+
+  grafana:
+    image: grafana/grafana-oss:9.5.7
+    container_name: grafana
+    hostname: grafana
+    environment:
+      - GF_USERS_DEFAULT_THEME=light
+      - GF_SECURITY_ADMIN_PASSWORD=password
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+    volumes:
+      - ${PWD}/infra/grafana/fs/volumes/grafana/etc/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ${PWD}/infra/grafana/fs/volumes/grafana/etc/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ${PWD}/infra/grafana/dashboards:/var/lib/grafana/dashboards
+    ports:
+      - "0.0.0.0:3000:3000"
