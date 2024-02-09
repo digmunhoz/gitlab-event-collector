@@ -2,6 +2,12 @@
 
 This software collects events from GitLab server, providing insights from users events. It consists of a data collector, an Elasticsearch instance, and a Grafana dashboard ready for data visualization.
 
+As a technology leader, overseeing interactions with version control systems like Git is essential for various reasons. Firstly, it provides visibility into the progress of development tasks and projects. By tracking commits, branches, and merges, managers can understand the status of code changes and identify any bottlenecks or challenges the team may be facing.
+
+Additionally, monitoring version control interactions can help with project management and resource allocation. Managers can track the distribution of work among team members, identify areas where additional support may be needed, and make informed decisions about project timelines and priorities.
+
+Overall, by closely overseeing interactions with version control, technology managers can promote collaboration, ensure efficient project management, and make informed decisions to drive the success of development projects.
+
 ## Prerequisites
 The only requirement to run this software is Docker.
 
