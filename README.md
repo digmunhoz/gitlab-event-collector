@@ -26,8 +26,8 @@ Before running the application, make sure to follow these steps:
 |GITLAB_API_TOKEN|None|True|The gitlab API token|
 |ELASTICSEARCH_ADDRESS|http://elasticsearch:9200|False|The elasticsearch address|
 |ELASTICSEARCH_GITLAB_INDEX_PREFIX|gitlab_|False|The elasticsearch index prefix name|
-|TIME_WINDOW_START_DATE||True||
-|TIME_WINDOW_END_DATE||True||
+|TIME_WINDOW_START_DATE|None|True|Begin date. Format: %Y-%m-%d|
+|TIME_WINDOW_END_DATE|None|True|End date. Format: %Y-%m-%d|
 |MAX_USERS|None|False|Max users to get from the Gitlab API|
 
 ## Execution
