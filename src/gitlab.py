@@ -38,6 +38,7 @@ class Gitlab:
             query_string.update({"per_page": 100, "page": page})
 
             try:
+                logging.info(f"Getting data from endpoint {endpoint} on page {page}")
                 parcial_response = requests.get(
                     f"{Settings.GITLAB_API_URL}{endpoint}",
                     params=query_string,
