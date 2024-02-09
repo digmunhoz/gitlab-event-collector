@@ -49,6 +49,8 @@ This command will launch the data collector and begin retrieving events from con
 
 Once the Elasticsearch and Grafana services are up and running, you can access the Grafana dashboard by visiting http://localhost:3000 in your web browser. Use the default credentials (admin/password) to log in and explore the pre-configured dashboard called `Repository Events` for visualizing the collected data.
 
+![Panel](/img/panel.png "Panel")
+
 ## Contributing
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
