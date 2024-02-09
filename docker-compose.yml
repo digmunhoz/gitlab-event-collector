@@ -53,7 +53,6 @@ services:
     environment:
       - GF_USERS_DEFAULT_THEME=light
       - GF_SECURITY_ADMIN_PASSWORD=password
-      - GF_AUTH_ANONYMOUS_ENABLED=true
     volumes:
       - ${PWD}/infra/grafana/fs/volumes/grafana/etc/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - ${PWD}/infra/grafana/fs/volumes/grafana/etc/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
