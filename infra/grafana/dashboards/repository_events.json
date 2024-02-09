@@ -58,7 +58,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 9,
         "w": 12,
         "x": 0,
         "y": 0
@@ -152,7 +152,7 @@
           "timeField": "created_at"
         }
       ],
-      "title": "Repository interactions per week - by Developer (Top 10)",
+      "title": "Repository interactions - by Developer (Top 10)",
       "tooltip": {
         "show": true,
         "showHistogram": false
@@ -230,7 +230,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 9,
         "w": 12,
         "x": 12,
         "y": 0
@@ -296,7 +296,7 @@
           "timeField": "created_at"
         }
       ],
-      "title": "Repository interactions per week - by Developer (Top 10)",
+      "title": "Repository interactions - by Developer (Top 10)",
       "transformations": [],
       "type": "timeseries"
     },
@@ -361,10 +361,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
+        "h": 8,
         "w": 24,
         "x": 0,
-        "y": 10
+        "y": 9
       },
       "id": 11,
       "links": [],
@@ -427,12 +427,12 @@
           "timeField": "created_at"
         }
       ],
-      "title": "Repository interactions per week - by Developer (Top 10)",
+      "title": "Repository interactions - by Action",
       "transformations": [],
       "type": "timeseries"
     }
   ],
-  "refresh": false,
+  "refresh": "",
   "revision": 1,
   "schemaVersion": 38,
   "style": "dark",
